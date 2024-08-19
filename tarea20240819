@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int matriz[10][10];
+
+    // Rellenar la matriz según las condiciones dadas
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 10; j++) {
+            if (i == j) {
+                matriz[i][j] = 88;  // Si el índice de fila es igual al de columna
+            } else if (i + j == 9) {
+                matriz[i][j] = 99;  // Si la suma del índice de fila y columna es igual a 9
+            } else if (i % 2 == 0 && j % 2 == 0) {
+                matriz[i][j] = 33;  // Si ambos índices son pares
+            } else if (i % 2 != 0 && j % 2 != 0) {
+                matriz[i][j] = 44;  // Si ambos índices son impares
+            } else {
+                matriz[i][j] = 0;   // En caso de que no cumpla ninguna de las condiciones
+            }
+        }
+    }
+
+    // Imprimir la matriz
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 10; j++) {
+            printf("%d\t", matriz[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
