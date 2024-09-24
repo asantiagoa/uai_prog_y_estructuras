@@ -1,0 +1,127 @@
+parcial teoria
+
+1-escribir el pseudocodigo necesario para realizar los tres recorridos de arbol binario de busqueda:
+a-preorden
+b-inorden
+c-postorden
+
+2-definir el algoritmo para agregar un nodo en un arbol binario de busqueda.
+3-definir el algoritmo para buscar un nodo en un arbol binario de busqueda.
+4-definir el algoritmo para eliminar un nodo en un arbol binario de busqueda.
+
+papel y lapiz
+
+
+
+
+1----------------------------------------------------------------------------------------------
+a----------------------------------------------------------------------------------------------
+funcion RecorrerPreorden(nodo){
+	visitar(nodo)
+	si(nodo.izquierda es distinto a vacio){
+		RecorrerPreorden(nodo.izquierda)
+	}
+	si(nodo.derecha es distinto a vacio){
+		RecorrerPreorden(nodo.derecha)
+	}
+}
+b----------------------------------------------------------------------------------------------
+funcion RecorrerInorden(nodo){
+	si(nodo.izquierda es distinto a vacio){ 
+		RecorrerInorden(nodo.izquierda) 
+	}
+	visitar(nodo)
+
+	si(nodo.derecha es distinto a vacio){
+ 		RecorrerInorden(nodo.derecha)
+	}
+}
+c----------------------------------------------------------------------------------------------
+funcion RecorrerPostorden(nodo){
+	si(nodo.izquierda es distinto a vacio){
+		RecorrerPostorden(nodo.izquierda)
+	}
+	si(nodo.derecha es distinto a vacio){
+		RecorrerPostorden(nodo.derecha)
+	}
+	visitar(nodo)
+}
+
+
+2----------------------------------------------------------------------------------------------
+
+funcion agregar(nodo){
+	nodo = constructorNodo(valor)
+	si raiz es nulo{
+		raiz = nodo
+	}
+	si no{
+		auxiliar = raiz
+		bucle{
+			padre = auxiliar
+			si valor es mayor a auxiliar.valor{
+				auxiliar = auxiliar.izquierda
+				si auxiliar es nulo{
+					padre.izquierda = nodo
+					romper bucle
+				}
+			}
+			si no{
+				auxiliar = auxiliar.derecha
+				si auxiliar es nulo{
+					padre.derecha = nodo
+					romper bucle
+				}
+			}
+		}
+	}
+}
+3-------------------------------------------------------------------------------------------------
+
+funcion buscar(valor, arbol){
+
+	auxiliar = arbol.raiz
+	mientras auxiliar.numero sea distinto a valor{
+		si auxiliar.numero mayor a valor{
+			auxiliar = auxiliar.izquierda
+		}
+		si no{
+			auxiliar = auxiliar.derecha
+		}
+
+		si auxiliar es nulo{
+			devolver nulo
+		}
+	}
+	devolver  auxiliar
+}
+
+
+4-----------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------
+
+
+
+pregujntas parcial
+system object
+
+tipos por valor y por referencia
+valor = copia de valor de la variable
+referencia = direccion de donde esta la variable
+variables por valor = derivan de clase valueType (int string bool double etc)
+variable por referencia = aquellas que el sistema no conoce (arrays clase struct etc)
+
+metodos de system.string (concat trim subcat uppercase lowercase length empty etc)
+
+propiedades de un control en formulario (height width location name type value etc)
+
+eventos/metodos de un control (onclick etc)
+
+tipos de control (datetime picker textbox combobox messagebox listbox label radiobutton checkbox)
+
+cerrar form(this.close vs this.end)
+
+formulario MDI (interfaz de multiples documentos)-> multiples ventanas
+
+VER COLECCIONES DE .NET
